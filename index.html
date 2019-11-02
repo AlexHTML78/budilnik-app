@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="full-screen" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/mobileSelect.css">
+    <script src="mobileSelect.min.js"></script>
+    <title>Будильник ПетрГУ</title>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="budilnik_nav active">
+                <h4 class="active">Будильник</h4>
+            </div>
+            <div class="raspisanie_nav">
+                <h4>Расписание</h4>
+            </div>
+           <!-- <button id="more">...</button> -->
+        </div>
+    </header>
+    <main>
+        <div class="main_bud">
+            <ul class="spisok_bud">
+                <li class="budilnik">
+                    <h2 id="time">05:45</h2>
+                    <label class="switch">
+                        <input type="checkbox" name="onOff" id="onOff">
+                        <span class="slider round"></span>
+                      </label>
+                    <p id="info">За 4 часа до пары | через 2 часа 3 минуты</p>
+                </li>
+            </ul>
+            <button id="add_timer"></button>
+        </div>
+        <div class="make_new_bud">
+            <label for="choose_day">Когда будить?</label>
+            <select name="choose_day" class="choose_day">
+                <option value="">Каждый день</option>
+                <option value="">Понедельник</option>
+                <option value="">Вторник</option>
+                <option value="">Среда</option>
+                <option value="">Четверг</option>
+                <option value="">Пятница</option>
+                <option value="">Никогда</option>
+            </select>
+            <label for="choose_hours">За сколько часов до пары?</label>
+            <div class="choose_hours">
+                  <input type="text" id="time_picker" placeholder="Выберите промежуток">
+            </div>
+            <button>Сохранить</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
