@@ -45,7 +45,7 @@ main {
   padding: 0 20px; }
 
 .main_bud .spisok_bud {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center; }
   .main_bud .spisok_bud .budilnik {
@@ -117,7 +117,7 @@ input[type='checkbox']:checked + .slider:before {
     border-radius: 50%; }
 
 #add_timer {
-  display: none;
+  display: block;
   margin: 0 auto;
   background-color: #65677B;
   width: 40px;
@@ -146,7 +146,7 @@ input[type='checkbox']:checked + .slider:before {
     margin-top: -1px; }
 
 .make_new_bud {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center; }
   .make_new_bud .choose_day {

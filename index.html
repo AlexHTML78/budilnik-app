@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="nav">
-            <div class="budilnik_nav active">
+            <div id="budilnikNav" class="budilnik_nav active">
                 <h4 class="active">Будильник</h4>
             </div>
             <div class="raspisanie_nav">
@@ -25,7 +25,7 @@
     </header>
     <main>
         <div class="main_bud">
-            <ul class="spisok_bud">
+            <ul id="spisokBud" class="spisok_bud">
                 <li class="budilnik">
                     <h2 id="time">05:45</h2>
                     <label class="switch">
@@ -37,7 +37,7 @@
             </ul>
             <button id="add_timer"></button>
         </div>
-        <div class="make_new_bud">
+        <div id="makeNewBud" class="make_new_bud">
             <label for="choose_day">Когда будить?</label>
             <select name="choose_day" class="choose_day">
                 <option value="">Каждый день</option>
@@ -52,7 +52,7 @@
             <div class="choose_hours">
                   <input type="text" id="time_picker" placeholder="Выберите промежуток">
             </div>
-            <button>Сохранить</button>
+            <button id="saveTimer">Сохранить</button>
         </div>
     </main>
 

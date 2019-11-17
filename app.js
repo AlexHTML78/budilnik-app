@@ -7,3 +7,19 @@ var mobileSelect1 = new MobileSelect({
         {data: timeArr}
     ],
 });
+
+document.getElementById('add_timer').addEventListener('click', function() {
+
+    document.getElementById('add_timer').style.display = 'none';
+    document.getElementById('spisokBud').style.display = 'none';
+    document.getElementById('makeNewBud').style.display = 'flex';
+});
+document.getElementById('saveTimer').addEventListener('click', function() {
+
+    document.getElementById('add_timer').style.display = 'block';
+    document.getElementById('spisokBud').style.display = 'flex';
+    document.getElementById('makeNewBud').style.display = 'none';
+});
+
+
+
