@@ -1,12 +1,11 @@
 @font-face {
-  font-family: 'RtlLight';
-  src: url('/fonts/RostelecomBasis-Light.eot');
-  src: url('/fonts/RostelecomBasis-Light.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/RostelecomBasis-Light.svg#RostelecomBasis-Light') format('svg'),
-       url('/fonts/RostelecomBasis-Light.ttf') format('truetype'),
-       url('/fonts/RostelecomBasis-Light.woff') format('woff'),
-       url('/fonts/RostelecomBasis-Light.woff2') format('woff2');
+  font-family: 'MicrosoftSansSerif';
+  src: url('/fonts/Microsoft/MicrosoftSansSerif.svg#MicrosoftSansSerif') format('svg'),
+       url('/fonts/Microsoft/MicrosoftSansSerif.ttf') format('truetype'),
+       url('/fonts/Microsoft/MicrosoftSansSerif.woff') format('woff'),
+       url('/fonts/Microsoft/MicrosoftSansSerif.eot'),
+       url('/fonts/Microsoft/MicrosoftSansSerif.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/Microsoft/MicrosoftSansSerif.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
-

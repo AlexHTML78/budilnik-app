@@ -30,12 +30,26 @@
         <div class="main_bud">
             <ul id="spisokBud" class="spisok_bud">
                 <li class="budilnik">
-                    <h2 id="time">05:45</h2>
+                    <div class="bud_header">
+                        <h2 id="time">05:45</h2>
+                        <p id="info">Вам осталось спать 4:43</p>
+                    </div>
                     <label class="switch">
                         <input type="checkbox" name="onOff" id="onOff">
                         <span class="slider round"></span>
                       </label>
-                    <p id="info">За 4 часа до пары | через 2 часа 3 минуты</p>
+                    <div class="expanded_div">
+                        <div class="bud_footer">
+                            <h2 id="za_skolko_text">За <input type="time" step="60" min="00:00" max="08:00" id="za_skolko_time"> до пары</h2>
+                            
+                        </div>
+                        
+                        <button id="del">Удалить будильник</button>
+                    </div>
+                    <div id="delete_dropdown" class="arrow-4">
+                        <span class="arrow-4-left"></span>
+                        <span class="arrow-4-right"></span>
+                    </div>
                 </li>
             </ul>
             <button id="add_timer"></button>
