@@ -8,7 +8,7 @@ var mobileSelect1 = new MobileSelect({
     ],
 });
 
-
+/* Макс работает с этим */
 document.getElementById('saveTimer').addEventListener('click', function() {
 
     document.getElementById('add_timer').style.display = 'block';
@@ -27,9 +27,9 @@ $('ul').on('click','.arrow-4', function() {
     $(this).toggleClass('open');
     if ($(this).parent().height() <= 60) {
      $(this).parent().height( 200 );
-     $('.expanded_div').css({ // сделать это
-         display: 'flex' // в отдельной функции
-      })                   // и с дисплеем: бокс тоже. сделать как с ul, чтобы работало только с event.target
+     $('.expanded_div').css({ 
+         display: 'flex' 
+      })                 
     }
     else if ($(this).parent().height() == 200) {
      $('.expanded_div').css({
@@ -40,14 +40,21 @@ $('ul').on('click','.arrow-4', function() {
     
     
 });
+
+/* Дальше Макс не трогает */
+
+/* Сентябрина работает с этим */
 $("#saveTimer").click(function(){ 
+
+/* следущие три строки нужны для добавления кнопки со стрелкой вниз - открытие доп настроек и кнопки удалить */
 let txt = document.createElement('div');
 txt.className = 'arrow-4';
 txt.innerHTML = "<span class='arrow-4-left'></span><span class='arrow-4-right'></span>";
+/*следущая строка добавляет сам новый будильник */
     $('#spisokBud').append("<li class='budilnik'><div class='bud_header'> <h2 id='time'>05:45</h2> <p id='info'>Вам осталось спать 4:43</p>  </div> <label class='switch'> <input type='checkbox' name='onOff' id='onOff'> <span class='slider round'></span></label><div class='expanded_div'> <button id='del'>Удалить будильник</button></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div></li>"); 
     $('.delete_div').prepend(txt);
     }); 
-    
+/* здесь Сентябрина должна сделать функцию удаления будильника */
     $("#del").click(function(){ 
         $('#pizza3').remove(); 
     }); 

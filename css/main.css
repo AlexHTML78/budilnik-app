@@ -7,6 +7,7 @@
   text-decoration: none; }
 
 body {
+  height: 100vh;
   background-size: cover;
   font-family: "MicrosoftSansSerif", serif;
   background: url(../jpg/83e9f888-d12f-4c49-8e7f-fdf3d2520124.jpeg) no-repeat center bottom fixed; }

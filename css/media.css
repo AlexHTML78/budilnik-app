@@ -1,0 +1,5 @@
+@media screen and (max-width: 350px) {
+  .main_bud .spisok_bud .budilnik .bud_header #time {
+    font-size: 28px; }
+  .main_bud .spisok_bud .budilnik .bud_header #info {
+    font-size: 16px; } }
