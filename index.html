@@ -13,16 +13,13 @@
     <!-- Скрипты: виджет выбора времени, jQuery-->
     <script src="mobileSelect.min.js"></script>
     <script src="jquery-3.4.1.min.js"></script>
-    <title>Будильник ПетрГУ</title>
+    <title>Будильник</title>
 </head>
 <body>
     <header>
         <div class="nav">
             <div id="budilnikNav" class="budilnik_nav active">
                 <h4 class="active">Будильник</h4>
-            </div>
-            <div class="raspisanie_nav">
-                <h4>Расписание</h4>
             </div>
            <!-- <button id="more">...</button> -->
         </div>
@@ -33,7 +30,7 @@
                 <li class="budilnik">
                     <div class="bud_header">
                         <h2 id="time">05:45</h2>
-                        <p id="info">Вам осталось спать 4:43</p>
+                        <p id="info">Вам осталось спать <span id="time_left"></span></p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" name="onOff" id="onOff">
@@ -41,7 +38,12 @@
                       </label>
                     <div class="expanded_div">
                         <div class="bud_footer">
-                            <h2 id="za_skolko_text">За <input type="time" step="60" min="00:00" max="08:00" id="za_skolko_time"> до пары</h2>
+                            <h2 id="za_skolko_text">За
+                            <select name="" id="hr_offset"></select>
+                            <select name="" id="min_offset"></select>
+                             до 
+                            <select name="" id="para"></select>
+                             пары</h2>
                             
                         </div>
                         
@@ -75,5 +77,6 @@
     </main>
 
     <script src="app.js"></script>
+    <script src="alarm.js"></script>
 </body>
 </html>
