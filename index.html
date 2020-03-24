@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
     <meta name="full-screen" content="yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Стили: основные, шрифты, виджет выбора времени-->
+    <!-- Стили: основные, responsive, шрифты-->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/mobileSelect.css">
-    <!-- Скрипты: виджет выбора времени, jQuery-->
-    <script src="mobileSelect.min.js"></script>
+    <!-- Скрипты jQuery-->
     <script src="jquery-3.4.1.min.js"></script>
     <title>Будильник</title>
 </head>
@@ -56,23 +54,6 @@
                 </li>
             </ul>
             <button id="add_timer"></button>
-        </div>
-        <div id="makeNewBud" class="make_new_bud">
-            <label for="choose_day">Когда будить?</label>
-            <select name="choose_day" class="choose_day">
-                <option value="">Каждый день</option>
-                <option value="">Понедельник</option>
-                <option value="">Вторник</option>
-                <option value="">Среда</option>
-                <option value="">Четверг</option>
-                <option value="">Пятница</option>
-                <option value="">Никогда</option>
-            </select>
-            <label for="choose_hours">За сколько часов до пары?</label>
-            <div class="choose_hours">
-                  <input type="text" id="time_picker" placeholder="Выберите промежуток">
-            </div>
-            <button id="saveTimer">Сохранить</button>
         </div>
     </main>
 

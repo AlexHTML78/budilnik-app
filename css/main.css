@@ -7,13 +7,14 @@
   text-decoration: none; }
 
 body {
+  width: 100%;
   height: 100vh;
   font-family: "Rtl", serif;
-  background: url(../jpg/app_background.png) no-repeat fixed;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain; }
+  background: url(../jpg/app_background.png) no-repeat center center;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%; }
 
 .nav {
   width: 100%;
@@ -84,6 +85,8 @@ main {
           padding: 5px 15px;
           color: #ffffff;
           margin-right: 5px; }
+          .main_bud .spisok_bud .budilnik .expanded_div .bud_footer select:active {
+            color: #000; }
         .main_bud .spisok_bud .budilnik .expanded_div .bud_footer #za_skolko_text {
           color: #ffffff;
           font-size: 20px;
@@ -196,9 +199,6 @@ main {
         transform-origin: center center;
         transform: rotate(70deg); }
 
-.make_new_bud {
-  display: flex; }
-
 .main_bud .spisok_bud .budilnik p {
   color: #ffffff;
   font-size: 14px; }
@@ -280,49 +280,3 @@ input[type='checkbox']:checked + .slider:before {
     width: 50%;
     height: 2px;
     margin-top: -1px; }
-
-.make_new_bud {
-  display: none;
-  flex-direction: column;
-  align-items: center; }
-  .make_new_bud label {
-    color: #ffffff; }
-  .make_new_bud .choose_day {
-    border-radius: 10px;
-    width: 50%;
-    min-height: 55px;
-    padding: 5px 10px 5px 20px;
-    margin-bottom: 20px;
-    background-color: rgba(91, 91, 91, 0.3);
-    position: relative;
-    outline: none;
-    border: none;
-    font-family: "Rtl", serif; }
-  .make_new_bud .choose_hours {
-    width: 50%;
-    color: #fff; }
-    .make_new_bud .choose_hours input {
-      height: 55px;
-      margin-bottom: 20px;
-      background-color: rgba(91, 91, 91, 0.3);
-      font-family: "Rtl", serif;
-      color: #ffffff;
-      position: relative;
-      width: 100%;
-      border-radius: 10px;
-      text-align: center;
-      display: block;
-      outline: none;
-      border: none; }
-  .make_new_bud input::placeholder {
-    color: #000; }
-  .make_new_bud #saveTimer {
-    width: 150px;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    display: block;
-    padding: 10px 5px;
-    font-family: "Rtl", serif;
-    text-transform: uppercase; }
