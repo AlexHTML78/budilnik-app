@@ -137,7 +137,7 @@ function setOptions() {
 
 function alarm() {
   function ifClicked() {
-    $(document).on("click", ".onOff", function () {
+    $(document).on("click touchstart", ".onOff", function () {
       let time_left = $(this)
         .parent()
         .parent()
@@ -227,12 +227,10 @@ function alarm() {
             var seconds = date.getSeconds();
 
             if (selectedHour - hours < 0 && selectedMin - minutes < 0) {
-              //time_left.text('');
               time_left.text(
                 selectedHour - hours + 24 + ":" + (selectedMin - minutes + 60)
               );
             } else if (selectedMin - minutes < 0) {
-              //time_left.text('   ');
               if (selectedHour - hours > 0) {
                 time_left.text("0" + ":" + (selectedMin - minutes + 60));
               } else {
@@ -241,13 +239,11 @@ function alarm() {
                 );
               }
             } else if (selectedHour - hours < 0) {
-              //time_left.text('   ');
               time_left.text(
                 selectedHour - hours + 24 + ":" + (selectedMin - minutes)
               );
             } else if (this.checked == false) {
               time_left.text("   ");
-              // time_left.text((selectedHour - hours) + ":" + (selectedMin - minutes));
             } else {
               time_left.text(
                 selectedHour - hours + ":" + (selectedMin - minutes)
