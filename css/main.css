@@ -55,9 +55,10 @@ main {
     z-index: 999; }
     .main_bud .spisok_bud .budilnik .bud_header {
       display: flex;
-      flex-direction: row;
-      align-items: top; }
+      align-content: center;
+      flex-direction: row; }
       .main_bud .spisok_bud .budilnik .bud_header #time {
+        align-self: center;
         font-family: "MicrosoftSansSerif", serif;
         font-size: 32px;
         border: 1px solid #fff;
@@ -66,8 +67,10 @@ main {
         color: #ffffff;
         margin-right: 5px; }
       .main_bud .spisok_bud .budilnik .bud_header #info {
-        font-size: 20px;
-        padding-right: 10%; }
+        align-self: center;
+        width: 100%;
+        text-align: center;
+        padding-right: 15%; }
     .main_bud .spisok_bud .budilnik .expanded_div {
       display: none; }
       .main_bud .spisok_bud .budilnik .expanded_div .bud_footer {
