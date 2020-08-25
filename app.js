@@ -43,7 +43,7 @@ var app = {
     timeHasLeft_p.appendChild(timeHasLeft_span);
     app.bud_num = app.bud_num + 1;
     li.innerHTML =
-      "<div class='bud_header'> <h2 id='time'>05:45</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'<h2 id='za_skolko_text'>За<select class='hr_offset'></select><select class='min_offset'></select>до<select class='para' id='para'></select> пары</h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
+      "<div class='bud_header'> <h2 id='time'>05:45</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'><h2 id='za_skolko_text'><span>За</span><select class='hr_offset'></select><select class='min_offset'></select><span>до</span><select class='para' id='para'></select> <span>пары</span></h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
     /*следущая строка добавляет сам новый будильник */
 
     $("#spisokBud").append(li);
