@@ -8,18 +8,23 @@ var app = {
       localStorage.removeItem(key);
       //Удаляет сам будильник из списка
       this.parentNode.parentNode.remove();
+      //Уменьшает количество будильников в переменной
+      app.bud_num = app.bud_num - 1;
     });
   },
   updateBudList: function () {
     //Запись будильников из Local Storage в список
-    for (var i = 0; i < localStorage.length; i++) {
+    for (var i = 0; i <= localStorage.length; i++) {
+      var textnode = localStorage.getItem(i);
+     if (textnode !== null) {
       var node = document.createElement("li");
       node.className = "budilnik " + i;
-      var textnode = localStorage.getItem(i);
+      
       node.innerHTML = textnode;
       document.getElementById("spisokBud").appendChild(node);
       app.bud_num = localStorage.length;
       setOptions();
+      }
     }
     alarm();
     app.deleteBud();
@@ -74,22 +79,23 @@ $("ul").on("click touchstart", ".arrow-4", function () {
   if ($(this).parent().height() <= 60) {
     $(this).parent().animate(
       {
-        height: "200px",
+        height: "150px",
       },
       500
     );
-    $(this).parent().find(".expanded_div").css({
-      display: "flex",
-    });
+    $(this).parent().find(".expanded_div")
+    .css({display: "flex",})
+    .hide()
+    .fadeIn('slow');
   } else if ($(this).parent().height() > 60) {
-    $(this).parent().find(".expanded_div").css({
-      display: "none",
-    });
+    $(this).parent().find(".expanded_div")
+    //.css({display: "none",})
+    .fadeOut('fast');
     $(this).parent().animate(
-      {
-        height: "60px",
-      },
-      500
+     {
+       height: "60px",
+     },
+      600
     );
   }
 });
@@ -133,7 +139,7 @@ function setOptions() {
     }
   }
   minMenu();
-}
+} 
 
 function alarm() {
   function ifClicked() {
@@ -156,21 +162,24 @@ function alarm() {
             .parent()
             .parent()
             .children(".expanded_div")
-            .children(0)
-            .children(1)
+            .children('.bud_footer')
+            .children('#za_skolko_text')
+            .children('.hr_offset')
             .val();
           let min = $(this)
             .parent()
             .parent()
             .children(".expanded_div")
-            .children(0)
+            .children('.bud_footer')
+            .children('#za_skolko_text')
             .children(".min_offset")
             .val();
           let para = $(this)
             .parent()
             .parent()
             .children(".expanded_div")
-            .children(0)
+            .children('.bud_footer')
+            .children('#za_skolko_text')
             .children(".para")
             .val();
           function alarmSet() {
@@ -215,7 +224,6 @@ function alarm() {
 
             alarmTime = addZero(selectedHour) + ":" + addZero(selectedMin);
             alarmTimeOut.text(alarmTime);
-
             /* подсчет текущего времени, выбор строки, выводимой в качестве времени до звонка
              */
             var date = new Date();
