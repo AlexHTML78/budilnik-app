@@ -16,18 +16,30 @@
 <body>
     <header>
         <div class="nav">
-            <div id="budilnikNav" class="budilnik_nav active">
-                <h4 class="active">Будильник</h4>
-            </div>
+            <button class="tablinks" onclick="opentab(event, 'raspisanie')"><h4 class="tabtxt">Расписание</h4></button>
+            <button class="tablinks" onclick="opentab(event, 'budilnik')" id="defaultOpen"><h4 class="tabtxt">Будильник</h4></button>
+            <button class="tablinks" onclick="opentab(event, 'nastroyki')"><h4 class="tabtxt">Настройки</h4></button>
         </div>
     </header>
-    <main>
-        <div class="main_bud">
-            <ul id="spisokBud" class="spisok_bud">
-            </ul>
+
+    <div id="raspisanie" class="tabcontent">
+        <h1 class="tabtxt">В разработке</h1>
+    </div>
+
+    <div id="budilnik" class="tabcontent">
+        <main>
+            <div class="main_bud">
+                <ul id="spisokBud" class="spisok_bud">
+                </ul>
             <button id="add_timer"></button>
-        </div>
-    </main>
+            </div>
+        </main>
+    </div>
+
+    <div id="nastroyki" class="tabcontent">
+        <h1 class="tabtxt">В разработке</h1>
+    </div>
+    
     <script src="app.js"></script>
 </body>
 </html>

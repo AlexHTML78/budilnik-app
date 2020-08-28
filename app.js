@@ -8,18 +8,23 @@ var app = {
       localStorage.removeItem(key);
       //Удаляет сам будильник из списка
       this.parentNode.parentNode.remove();
+      //Уменьшает количество будильников в переменной
+      app.bud_num = app.bud_num - 1;
     });
   },
   updateBudList: function () {
     //Запись будильников из Local Storage в список
-    for (var i = 0; i < localStorage.length; i++) {
+    for (var i = 0; i <= localStorage.length; i++) {
+      var textnode = localStorage.getItem(i);
+     if (textnode !== null) {
       var node = document.createElement("li");
       node.className = "budilnik " + i;
-      var textnode = localStorage.getItem(i);
+      
       node.innerHTML = textnode;
       document.getElementById("spisokBud").appendChild(node);
       app.bud_num = localStorage.length;
       setOptions();
+      }
     }
     alarm();
     app.deleteBud();
@@ -43,7 +48,7 @@ var app = {
     timeHasLeft_p.appendChild(timeHasLeft_span);
     app.bud_num = app.bud_num + 1;
     li.innerHTML =
-      "<div class='bud_header'> <h2 id='time'>05:45</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'<h2 id='za_skolko_text'>За<select class='hr_offset'></select><select class='min_offset'></select>до<select class='para' id='para'></select> пары</h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
+      "<div class='bud_header'> <h2 id='time'>05:45</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'><h2 id='za_skolko_text'><span>За</span><select class='hr_offset'></select><select class='min_offset'></select><span>до</span><select class='para' id='para'></select> <span>пары</span></h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
     /*следущая строка добавляет сам новый будильник */
 
     $("#spisokBud").append(li);
@@ -74,22 +79,23 @@ $("ul").on("click touchstart", ".arrow-4", function () {
   if ($(this).parent().height() <= 60) {
     $(this).parent().animate(
       {
-        height: "200px",
+        height: "150px",
       },
       500
     );
-    $(this).parent().find(".expanded_div").css({
-      display: "flex",
-    });
+    $(this).parent().find(".expanded_div")
+    .css({display: "flex",})
+    .hide()
+    .fadeIn('slow');
   } else if ($(this).parent().height() > 60) {
-    $(this).parent().find(".expanded_div").css({
-      display: "none",
-    });
+    $(this).parent().find(".expanded_div")
+    //.css({display: "none",})
+    .fadeOut('fast');
     $(this).parent().animate(
-      {
-        height: "60px",
-      },
-      500
+     {
+       height: "60px",
+     },
+      600
     );
   }
 });
@@ -133,7 +139,7 @@ function setOptions() {
     }
   }
   minMenu();
-}
+} 
 
 function alarm() {
   function ifClicked() {
@@ -156,21 +162,24 @@ function alarm() {
             .parent()
             .parent()
             .children(".expanded_div")
-            .children(0)
-            .children(1)
+            .children('.bud_footer')
+            .children('#za_skolko_text')
+            .children('.hr_offset')
             .val();
           let min = $(this)
             .parent()
             .parent()
             .children(".expanded_div")
-            .children(0)
+            .children('.bud_footer')
+            .children('#za_skolko_text')
             .children(".min_offset")
             .val();
           let para = $(this)
             .parent()
             .parent()
             .children(".expanded_div")
-            .children(0)
+            .children('.bud_footer')
+            .children('#za_skolko_text')
             .children(".para")
             .val();
           function alarmSet() {
@@ -215,7 +224,6 @@ function alarm() {
 
             alarmTime = addZero(selectedHour) + ":" + addZero(selectedMin);
             alarmTimeOut.text(alarmTime);
-
             /* подсчет текущего времени, выбор строки, выводимой в качестве времени до звонка
              */
             var date = new Date();
@@ -282,3 +290,19 @@ function musicc() {
     sound.play();
   });
 }
+function opentab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";}
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");}
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    
+document.getElementById("defaultOpen").click();

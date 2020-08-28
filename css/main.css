@@ -8,33 +8,45 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   font-family: "Rtl", serif;
-  background: url(../jpg/app_background.png) no-repeat center center;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%; }
+  background: url(../jpg/app_background.png) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
 
 .nav {
   width: 100%;
-  height: 30px;
-  padding: 5px 20px;
+  height: 43px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   border-bottom: 1px solid #d4d8cd; }
-  .nav div {
+  .tablinks {
+    background-color: rgba(0,0,0,0);
+    border: rgba(0,0,0,0);
+    float:left
+    height: 40px;
+    width: 33.333333%;
     padding: 0 15px 0; }
-    .nav div h4 {
+  .tablinks.active {
+    background-color: rgba(0,0,0,0.1);
+    border: rgba(0,0,0,0);
+    float:left
+    height: 40px;
+    width: 33.333333%;
+    padding: 0 15px 0; }
+    .tabtxt {
       color: #000;
-      line-height: 32px;
+      line-height: 42px;
       width: 100%;
       height: 100%;
       display: block;
       color: #ffffff; }
+
 
 main {
   padding: 0 20px; }
@@ -74,12 +86,16 @@ main {
     .main_bud .spisok_bud .budilnik .expanded_div {
       display: none; }
       .main_bud .spisok_bud .budilnik .expanded_div .bud_footer {
+        min-width: 290px;
         width: 400px;
         position: absolute;
         bottom: 5px;
         display: flex;
         flex-direction: row;
         align-items: top; }
+        .main_bud .spisok_bud .budilnik .expanded_div .bud_footer span {
+          color: #ffffff;
+          margin-right: 10px; }
         .main_bud .spisok_bud .budilnik .expanded_div .bud_footer select {
           font-size: 12px;
           background-color: inherit;
@@ -87,13 +103,9 @@ main {
           border-radius: 10px;
           padding: 5px 15px;
           color: #ffffff;
-          margin-right: 5px; }
+          margin-right: 10px; }
           .main_bud .spisok_bud .budilnik .expanded_div .bud_footer select:active {
             color: #000; }
-        .main_bud .spisok_bud .budilnik .expanded_div .bud_footer #za_skolko_text {
-          color: #ffffff;
-          font-size: 20px;
-          padding-right: 10%; }
       .main_bud .spisok_bud .budilnik .expanded_div #del {
         background-color: inherit;
         outline: none;
@@ -210,7 +222,7 @@ main {
 .switch {
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 20px;
   display: inline-block;
   width: 30px;
   height: 16px; }
