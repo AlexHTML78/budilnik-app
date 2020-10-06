@@ -23,28 +23,24 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d4d8cd; }
   .tablinks {
     background-color: rgba(0,0,0,0);
-    border-style: none;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-    border-bottom-color: rgba(255,255,255,0);
-    float:left;
+    border: rgba(0,0,0,0);
+    float:left
     height: 40px;
     width: 33.333333%;
     padding: 0 15px 0; }
   .tablinks.active {
-    background-color: rgba(0,0,0,0);
-    border-style: none;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-    border-bottom-color: rgba(255,255,255,1);
-    float:left;
+    background-color: rgba(0,0,0,0.1);
+    border: rgba(0,0,0,0);
+    float:left
     height: 40px;
     width: 33.333333%;
     padding: 0 15px 0; }
     .tabtxt {
+      color: #000;
       line-height: 42px;
       width: 100%;
       height: 100%;
@@ -299,31 +295,3 @@ input[type='checkbox']:checked + .slider:before {
     width: 50%;
     height: 2px;
     margin-top: -1px; }
-
-.base
-{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  }
-  .wrap{
-    width: 100%;
-    height: 80px;
-    margin-bottom: 20px;
-  }
-    .buttcust{
-      background-color: rgba(91, 91, 91, 0.3);
-      border-color: rgba(91, 91, 91, 0.3);
-      border: none;
-      border-radius: 10px;
-      width: 100%;
-      height: 100%;
-    }
-      .custtxt{
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }

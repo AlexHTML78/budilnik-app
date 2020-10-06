@@ -1,4 +1,10 @@
+
+
 var app = {
+  count:0,
+
+  //JSON с возможными вариантами цветов интерфейса, где: ключ - свойство для селектора, значение - свойство для css
+ 
   bud_num: 0,
   deleteBud: function () {
     $(".budilnik").on("click touchstart", "#del", function () {
@@ -98,6 +104,21 @@ $("ul").on("click touchstart", ".arrow-4", function () {
       600
     );
   }
+});
+
+$(function () {
+  $('.changeColor').click(function() {
+   console.log('1234');
+   let colorsText = ['red', 'blue','green'];
+   let colorsButtons = ['green', 'red','blue'];
+   let images = [ 'url(jpg/app_background_2.jpg)','url(jpg/app_background_3.jpg)','url(jpg/app_background.png)'];
+   $('body').css('background-image', images[app.count]);
+   $('.tabtxt').css('color', colorsText[app.count]);
+   $('.tablinks').css('color', colorsButtons[app.count]);
+   app.count++; 
+  if (app.count > 2){
+    app.count = 0;
+  }})
 });
 
 function setOptions() {

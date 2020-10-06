@@ -15,24 +15,23 @@
 </head>
 <body>
     <header>
-        <div class="nav">
-            <button class="tablinks" onclick="opentab(event, 'schedule')">
-                <h3 class="tabtxt">Расписание</h3>
-            </button>
-            <button class="tablinks" onclick="opentab(event, 'alarm')" id="defaultOpen">
-                <h3 class="tabtxt">Будильник</h3>
-            </button>
-            <button class="tablinks" onclick="opentab(event, 'customization')">
-                <h3 class="tabtxt">Настройки</h3>
-            </button>
+        
+
+        <div class="nav"  >
+            <button class="tablinks" onclick="opentab(event, 'raspisanie')"><h4 class="tabtxt" id="santa">Расписание</h4></button>
+            <button class="tablinks" onclick="opentab(event, 'budilnik')" id="defaultOpen"><h4 class="tabtxt">Будильник</h4></button>
+            <button class="tablinks" onclick="opentab(event, 'nastroyki')"><h4 class="tabtxt">Настройки</h4></button>
         </div>
+
+
+
     </header>
 
-    <div id="schedule" class="tabcontent">
+    <div id="raspisanie" class="tabcontent">
         <h1 class="tabtxt">В разработке</h1>
     </div>
 
-    <div id="alarm" class="tabcontent">
+    <div id="budilnik" class="tabcontent">
         <main>
             <div class="main_bud">
                 <ul id="spisokBud" class="spisok_bud">
@@ -42,26 +41,12 @@
         </main>
     </div>
 
-    <div id="customization" class="tabcontent">
-        <main>
-            <dir class="base">
-                <dir class="wrap">
-                    <button class="buttcust">
-                        <h4 class="custtxt">Смена темы</h4>
-                    </button>
-                </dir>
-                <dir class="wrap">
-                    <button class="buttcust">
-                        <h4 class="custtxt">Смена мелодии</h4>
-                    </button>
-                </dir>
-                <dir class="wrap">
-                    <button class="buttcust">
-                        <h4 class="custtxt">О разработчиках</h4>
-                    </button>
-                </dir>
-            </dir>
-        </main>
+    <div id="nastroyki" class="tabcontent">
+        <h1 class="tabtxt" >В разработке</h1>
+    
+     
+
+        <button class="changeColor" onclick="changeColor()">Поменять цвет</button>
     </div>
     
     <script src="app.js"></script>
