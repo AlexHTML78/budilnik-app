@@ -9,8 +9,6 @@
 body {
   width: 100%;
   height: 100%;
-  font-family: "Rtl", serif;
-  background: url(../jpg/app_background.png) no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -27,8 +25,6 @@ body {
   .tablinks {
     background-color: rgba(0,0,0,0);
     border-style: none;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
     border-bottom-color: rgba(255,255,255,0);
     float:left;
     height: 40px;
@@ -37,9 +33,6 @@ body {
   .tablinks.active {
     background-color: rgba(0,0,0,0);
     border-style: none;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-    border-bottom-color: rgba(255,255,255,1);
     float:left;
     height: 40px;
     width: 33.333333%;
@@ -50,6 +43,16 @@ body {
       height: 100%;
       display: block;
       color: #ffffff; }
+    .tablinks.active::after{
+      content: '';
+      position: relative;
+      bottom: 10px;
+      display: inline-block;
+      width: 100%;
+      border-radius: 5px;
+      height: 5px;
+      background-color: #fff;
+    }
 
 
 main {
@@ -64,8 +67,8 @@ main {
     position: relative;
     border-radius: 10px 10px 0 10px;
     width: 100%;
-    height: 60px;
-    padding: 5px 0px 0px 20px;
+    min-height: 60px;
+    padding: 5px 5px 5px 20px;
     margin-bottom: 50px;
     background-color: rgba(91, 91, 91, 0.3);
     z-index: 999; }
@@ -75,8 +78,7 @@ main {
       flex-direction: row; }
       .main_bud .spisok_bud .budilnik .bud_header #time {
         align-self: center;
-        font-family: "MicrosoftSansSerif", serif;
-        font-size: 32px;
+        font-size: 28px;
         border: 1px solid #fff;
         border-radius: 10px;
         padding: 5px 10px;
