@@ -20,3 +20,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Reef';
+  src: url('../fonts/Reef/Reef-Bold.eot');
+  src: url('../fonts/Reef/Reef-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Reef/Reef-Bold.svg#Reef-Bold') format('svg'),
+       url('../fonts/Reef/Reef-Bold.ttf') format('truetype'),
+       url('../fonts/Reef/Reef-Bold.woff') format('woff'),
+       url('../fonts/Reef/Reef-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
