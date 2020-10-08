@@ -5,7 +5,7 @@ var app = {
 
   bud_num: 0,
   deleteBud: function () {
-    $(".budilnik").on("dbclick touchstart", "#del", function () {
+    $(".budilnik").on("click touchstart", "#del", function () {
       //Выбирает число-ключ из класса элемента
       var key = this.parentNode.parentNode.className.split(" ").pop();
       //Убирает будильник из Local Storage
