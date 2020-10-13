@@ -1,8 +1,5 @@
 var app = {
-  count:0,
-
-  //JSON с возможными вариантами цветов интерфейса, где: ключ - свойство для селектора, значение - свойство для css
- 
+  count: 0,
   bud_num: 0,
   deleteBud: function () {
     $(".budilnik").on("click touchstart", "#del", function () {
@@ -66,6 +63,7 @@ var app = {
     localStorage.setItem(key, value);
     alarm();
     app.deleteBud();
+    changeTheme(); // Для стилизации только что созданных будильников
   },
 };
 
@@ -102,25 +100,6 @@ $("ul").on("click touchstart", ".arrow-4", function () {
       600
     );
   }
-}); 
-
-$(function () {
-  $('.theme').click(function() {
-   console.log('1234');
-   let images = [ 'url(jpg/app_background_1.png)','url(jpg/app_background_2.png)','url(jpg/app_background.png)'];
-   let buttCust = ['rgba(83,136,173,0.5))','rgba(35,43,86,0.8)','rgba(91, 91, 91, 0.3)'];
-   let theme = ['rgba(83,136,173,0.5))','rgba(35,43,86,0.8)','rgba(91, 91, 91, 0.3)'];
-   let main = ['rgba(83,136,173,0.5))','rgba(35,43,86,0.8)','rgba(91, 91, 91, 0.3)'];
-   let addTimer = ['rgba(83,136,173,0.5))','rgba(35,43,86,0.8)','rgba(91, 91, 91, 0.3)'];
-   $('body').css('background-image', images[app.count]);
-   $('.buttCust').css('background-color', buttCust[app.count]);
-   $('.theme').css('background-color', theme[app.count]);
-   $('.budilnik').css('background-color', main[app.count]);
-   $('.addTimer').css('background-color', addTimer[app.count]);
-   app.count++; 
-  if (app.count > 2){
-    app.count = 0;
-  }})
 });
 
 function setOptions() {
@@ -145,6 +124,7 @@ function setOptions() {
         i < 10 ? "0" + i : i,
         i
       );
+
     }
   }
   hoursMenu();
@@ -259,14 +239,14 @@ function alarm() {
 
             if (selectedHour - hours < 0 && selectedMin - minutes < 0) {
               time_left.text(
-                selectedHour - hours + 24 + ":" + (selectedMin - minutes + 60)
+                selectedHour - hours + 23 + ":" + (selectedMin - minutes + 60)
               );
             } else if (selectedMin - minutes < 0) {
-              if (selectedHour - hours > 0) {
-                time_left.text("0" + ":" + (selectedMin - minutes + 60));
+              if (selectedHour - hours <= 0) {
+                time_left.text("00" + ":" + (selectedMin - minutes + 60));
               } else {
                 time_left.text(
-                  selectedHour - hours + ":" + (selectedMin - minutes + 60)
+                  selectedHour - hours - 1 +":" + (selectedMin - minutes + 60)
                 );
               }
             } else if (selectedHour - hours < 0) {
@@ -313,19 +293,101 @@ function musicc() {
     sound.play();
   });
 }
+
+
+// Смена темы путем замены стилей на заготовленные варианты
+function changeTheme() {
+  let check = localStorage.getItem("app.count");
+  if (check != undefined) {
+    app.count = check;
+  }
+  let images = [
+    "url(jpg/app_background_1.png)",
+    "url(jpg/app_background_2.png)",
+    "url(jpg/app_background.png)",
+  ];
+  let fonts = [
+    'Reef',
+    'Reef',
+    'Rtl'
+  ];
+  let buttCust = [
+    "rgba(83,136,173,0.5)",
+    "rgba(35,43,86,0.8)",
+    "rgba(91, 91, 91, 0.3)",
+  ];
+  let theme = [
+    "rgba(83,136,173,0.5)",
+    "rgba(35,43,86,0.8)",
+    "rgba(91, 91, 91, 0.3)",
+  ];
+  let main = [
+    "rgba(83,136,173,0.5)",
+    "rgba(35,43,86,0.8)",
+    "rgba(91, 91, 91, 0.3)",
+  ];
+  let addTimer = [
+    "rgba(83,136,173,0.5)",
+    "rgba(35,43,86,0.8)",
+    "rgba(91, 91, 91, 0.3)",
+  ];
+  let point1 = [
+    "#ffffff",
+    "rgba(0, 0, 0, 0)",
+    "rgba(0, 0, 0, 0)",
+  ];
+  let point2 = [
+    "rgba(0, 0, 0, 0)",
+    "#ffffff",
+    "rgba(0, 0, 0, 0)",
+  ];
+  let point0 = [
+    "rgba(0, 0, 0, 0)",
+    "rgba(0, 0, 0, 0)",
+    "#ffffff",
+  ];
+  $("body").css("background-image", images[app.count]);
+  $("*").css("font-family", fonts[app.count]);
+  $(".buttCust").css("background-color", buttCust[app.count]);
+  $(".theme").css("background-color", theme[app.count]);
+  $(".point0").css("background-color", point0[app.count]);
+  $(".point1").css("background-color", point1[app.count]);
+  $(".point2").css("background-color", point2[app.count]);
+  $(".budilnik").css("background-color", main[app.count]);
+  $(".addTimer").css("background-color", addTimer[app.count]);
+}
+
+
+// Подгружаем ранее выбранную тему после загрузки страницы
+$(changeTheme);
+
+
+// По клику на кнопку "Сменить тему" устанавливаем порядок темы и запускаем changeTheme()
+$(".theme").click(function () {
+  app.count++;
+
+  if (app.count > 2) {
+    app.count = 0;
+  }
+  localStorage.setItem("app.count", app.count);
+  changeTheme();
+});
+
 function opentab(evt, tabName) {
-    var i, tabcontent, tablinks;
+  var i, tabcontent, tablinks;
 
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";}
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");}
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-    }
-    
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
 document.getElementById("defaultOpen").click();
