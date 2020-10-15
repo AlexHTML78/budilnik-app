@@ -49,7 +49,7 @@ var app = {
     timeHasLeft_p.appendChild(timeHasLeft_span);
     app.bud_num = app.bud_num + 1;
     li.innerHTML =
-      "<div class='bud_header'> <h2 id='time'>05:45</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'><h2 id='za_skolko_text'><span>За</span><select class='hr_offset'></select><select class='min_offset'></select><span>до</span><select class='para' id='para'></select> <span>пары</span></h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
+      "<div class='bud_header'> <h2 id='time'>-:-</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'><h2 id='za_skolko_text'><span>За</span><select class='hr_offset'></select><select class='min_offset'></select><span>до</span><select class='para' id='para'></select> <span>пары</span></h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
     /*следущая строка добавляет сам новый будильник */
 
     $("#spisokBud").append(li);
@@ -124,7 +124,6 @@ function setOptions() {
         i < 10 ? "0" + i : i,
         i
       );
-
     }
   }
   hoursMenu();
@@ -239,14 +238,14 @@ function alarm() {
 
             if (selectedHour - hours < 0 && selectedMin - minutes < 0) {
               time_left.text(
-                selectedHour - hours + 23 + ":" + (selectedMin - minutes + 60)
+                selectedHour - hours + 24 + ":" + (selectedMin - minutes + 60)
               );
             } else if (selectedMin - minutes < 0) {
-              if (selectedHour - hours <= 0) {
-                time_left.text("00" + ":" + (selectedMin - minutes + 60));
+              if (selectedHour - hours > 0) {
+                time_left.text("0" + ":" + (selectedMin - minutes + 60));
               } else {
                 time_left.text(
-                  selectedHour - hours - 1 +":" + (selectedMin - minutes + 60)
+                  selectedHour - hours + ":" + (selectedMin - minutes + 60)
                 );
               }
             } else if (selectedHour - hours < 0) {
@@ -331,6 +330,24 @@ function changeTheme() {
     "rgba(35,43,86,0.8)",
     "rgba(91, 91, 91, 0.3)",
   ];
+  let point1 = [
+    "#ffffff",
+    "rgba(0, 0, 0, 0)",
+    "rgba(0, 0, 0, 0)",
+  ];
+  let point2 = [
+    "rgba(0, 0, 0, 0)",
+    "#ffffff",
+    "rgba(0, 0, 0, 0)",
+  ];
+  let point0 = [
+    "rgba(0, 0, 0, 0)",
+    "rgba(0, 0, 0, 0)",
+    "#ffffff",
+  ];
+  $(".point0").css("background-color", point0[app.count]);
+  $(".point1").css("background-color", point1[app.count]);
+  $(".point2").css("background-color", point2[app.count]);
   $("body").css("background-image", images[app.count]);
   $("*").css("font-family", fonts[app.count]);
   $(".buttCust").css("background-color", buttCust[app.count]);
@@ -373,3 +390,30 @@ function opentab(evt, tabName) {
 }
 
 document.getElementById("defaultOpen").click();
+
+
+// Титры для вкладки О разработчиках
+$('#developers').on("click touchstart", function () {
+  console.log('work')
+  $('#credits').show();
+  $('#runningBlock').show();
+  $('#creditsClose').show();
+  var pos = 0;
+  height = $(document).height();
+
+  var intervalID = setInterval(function() { 
+    if (pos >= height*0.6) {
+      console.log('end of the credits');
+      clearInterval(intervalID);
+    }
+        $('#runningBlock').css('bottom', pos += 1);
+  }, 55) 
+  
+});
+$('#creditsClose').on("click touchstart", function () {
+  console.log('deleted');
+  $('#credits').hide();
+  $('#runningBlock').hide();
+  $('#creditsClose').hide();
+});
+
