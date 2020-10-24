@@ -417,6 +417,24 @@ input[type='checkbox']:checked+.slider:before {
   height: 100%;
 }
 
+.audio {
+  background-color: rgba(91, 91, 91, 0.3);
+  border-color: rgba(91, 91, 91, 0.3);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.dev {
+  background-color: rgba(91, 91, 91, 0.3);
+  border-color: rgba(91, 91, 91, 0.3);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
 .buttTop {
   width: 100%;
   height: 50%;
@@ -541,6 +559,61 @@ input[type='checkbox']:checked+.slider:before {
   width: 11px;
   height: 11px;
   border-radius: 6px;
+}
+
+
+.easy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 64px;
+  height: 32px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 16px;
+}
+
+.easytxt {
+  color: #ffffff;
+  position: relative;
+}
+
+.medium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 64px;
+  height: 32px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 16px;
+}
+
+.mediumtxt {
+  color: #ffffff;
+  position: relative;
+}
+
+.hard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 64px;
+  height: 32px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 16px;
+}
+
+.hardtxt {
+  color: #ffffff;
+  position: relative;
 }
 
 #credits {
