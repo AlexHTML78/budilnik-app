@@ -29,30 +29,267 @@
     </header>
 
     <div id="timetable" class="tabcontent">
-        <div class="base">
+
+        <div class="navTimetable">
+            <button class="tabTimetable" onclick="openTimetableTab(event, 'numerator')" id="defaultOpenTab"><h4 class="timetabletxt">Числитель</h4></button>
+            <button class="tabTimetable" onclick="openTimetableTab(event, 'denominator')"><h4 class="timetabletxt">Знаменатель</h4></button>
+        </div>
+
+        <div id="numerator" class="tabcontentTimetable">
             <div class="table">
-                <div class="tableLeft"><h4 class="tabeltxt">ПН</h4></div>
-                <div class="tableRight"></div>
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ПН</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
             </div>
             <div class="table">
-                <div class="tableLeft"><h4 class="tabeltxt">ВТ</h4></div>
-                <div class="tableRight"></div>
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ВТ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
             </div>
             <div class="table">
-                <div class="tableLeft"><h4 class="tabeltxt">СР</h4></div>
-                <div class="tableRight"></div>
+                <div class="weekday">
+                    <h2 class="weekdaytxt">СР</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
             </div>
             <div class="table">
-                <div class="tableLeft"><h4 class="tabeltxt">ЧТ</h4></div>
-                <div class="tableRight"></div>
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ЧТ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
             </div>
             <div class="table">
-                <div class="tableLeft"><h4 class="tabeltxt">ПТ</h4></div>
-                <div class="tableRight"></div>
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ПТ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
             </div>
             <div class="table">
-                <div class="tableLeft"><h4 class="tabeltxt">СБ</h4></div>
-                <div class="tableRight"></div>
+                <div class="weekday">
+                    <h2 class="weekdaytxt">СБ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
+            </div>
+        </div>
+
+        <div id="denominator" class="tabcontentTimetable">
+            <div class="table">
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ПН</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
+            </div>
+            <div class="table">
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ВТ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
+            </div>
+            <div class="table">
+                <div class="weekday">
+                    <h2 class="weekdaytxt">СР</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
+            </div>
+            <div class="table">
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ЧТ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
+            </div>
+            <div class="table">
+                <div class="weekday">
+                    <h2 class="weekdaytxt">ПТ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
+            </div>
+            <div class="table">
+                <div class="weekday">
+                    <h2 class="weekdaytxt">СБ</h2>
+                </div>
+                <div class="number">
+                    <h5 class="numbtxt">1.</h5>
+                    <h5 class="numbtxt">2.</h5>
+                    <h5 class="numbtxt">3.</h5>
+                    <h5 class="numbtxt">4.</h5>
+                    <h5 class="numbtxt">5.</h5>
+                    <h5 class="numbtxt">6.</h5>
+                </div>
+                <div class="schedule">
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                    <h5 class="scheduletxt" contenteditable="true">-</h5>
+                </div>
             </div>
         </div>
     </div>

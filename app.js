@@ -364,7 +364,7 @@ function changeTheme() {
     "rgba(35,43,86,0.8)",
     "rgba(35,43,86,0.8)",
     "rgba(6,11,23,0.32)",
-    "rgba(53,53,53,0.9)",
+    "rgba(53,53,53,1)",
     "rgba(91,91,91,0.3)"
   ];
   let point1 = [
@@ -552,4 +552,49 @@ $('#creditsClose').on("click touchstart", function () {
   $('#credits').hide();
   $('#runningBlock').hide();
   $('#creditsClose').hide();
+});
+
+//Переключение вкладок числитель/знаменатель
+function openTimetableTab(evt, tabName) {
+  var i, tabcontentTimetable, tabTimetable;
+
+  tabcontentTimetable = document.getElementsByClassName("tabcontentTimetable");
+  for (i = 0; i < tabcontentTimetable.length; i++) {
+    tabcontentTimetable[i].style.display = "none";
+  }
+
+  tabTimetable = document.getElementsByClassName("tabTimetable");
+  for (i = 0; i < tabTimetable.length; i++) {
+    tabTimetable[i].className = tabTimetable[i].className.replace(" active", "");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpenTab").click();
+
+//редактирование строк расписания
+var contentold={};
+function savedata(elementidsave,contentsave) {
+  $.ajax({
+    url: 'save.php',
+    type: 'POST', 
+    data:{content: contentsave, id:elementidsave},
+  });
+}               
+
+$(document).ready(function() {
+  $('[contenteditable="true"]')
+  .mousedown(function (e) {
+    e.stopPropagation();
+    elementid=this.id;
+  })
+  .blur(function (event) {
+    var elementidsave=this.id;
+    var  contentsave = $(this).html();
+    event.stopImmediatePropagation();
+    if (contentsave!=contentold[elementidsave]) {    
+      savedata(elementidsave,contentsave);
+    }
+  });
 });
