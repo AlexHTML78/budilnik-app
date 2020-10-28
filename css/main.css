@@ -37,6 +37,7 @@ body {
   height: 40px;
   width: 33.333333%;
   padding: 0 15px 0;
+  color: rgba(255, 255, 255, 0.37);
 }
 
 .tablinks.active {
@@ -46,6 +47,7 @@ body {
   height: 40px;
   width: 33.333333%;
   padding: 0 15px 0;
+  color: #fff;
 }
 
 .tabtxt {
@@ -53,7 +55,6 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  color: #ffffff;
 }
 
 .tablinks.active::after {
@@ -65,6 +66,7 @@ body {
   border-radius: 5px;
   height: 5px;
   background-color: #fff;
+  color: #fff;
 }
 
 
@@ -388,17 +390,49 @@ input[type='checkbox']:checked+.slider:before {
 .base {
   width: 100%;
   height: 100%;
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0 20px;
 }
 
-.wrap {
+.table {
+  display: flex;
+  border-color: rgba(91, 91, 91, 0.3);
+  border: none;
+  border-radius: 10px;
   width: 100%;
   height: 80px;
   margin-bottom: 20px;
 }
+
+.tableLeft {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+}
+
+.tabeltxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #fff;
+  color: rgba(255, 255, 255, 1);
+}
+
+.tableRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+}
+
 
 .theme {
   background-color: rgba(91, 91, 91, 0.3);
@@ -406,7 +440,8 @@ input[type='checkbox']:checked+.slider:before {
   border: none;
   border-radius: 10px;
   width: 100%;
-  height: 100%;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
 .audio {
@@ -415,7 +450,8 @@ input[type='checkbox']:checked+.slider:before {
   border: none;
   border-radius: 10px;
   width: 100%;
-  height: 100%;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
 .dev {
@@ -424,7 +460,8 @@ input[type='checkbox']:checked+.slider:before {
   border: none;
   border-radius: 10px;
   width: 100%;
-  height: 100%;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
 .buttTop {
@@ -435,17 +472,17 @@ input[type='checkbox']:checked+.slider:before {
   align-items: center;
 }
 
-.custtxt {
-  color: #ffffff;
-  font-size: 18px;
-}
-
 .buttBottom {
   width: 100%;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+.custtxt {
+  color: #ffffff;
+  font-size: 18px;
 }
 
 .flag0 {
@@ -460,7 +497,8 @@ input[type='checkbox']:checked+.slider:before {
   border-color: #ffffff;
   border-width: 2px;
   border-radius: 16px;
-  background-color: #cac4b0;
+  background-image: url(../jpg/icon.png);
+  background-size: contain;
 }
 
 .point0 {
@@ -481,7 +519,8 @@ input[type='checkbox']:checked+.slider:before {
   border-color: #ffffff;
   border-width: 2px;
   border-radius: 16px;
-  background-color: #00BFFF;
+  background-image: url(../jpg/icon_1.png);
+  background-size: contain;
 }
 
 .point1 {
@@ -502,7 +541,8 @@ input[type='checkbox']:checked+.slider:before {
   border-color: #ffffff;
   border-width: 2px;
   border-radius: 16px;
-  background-color: #191970;
+  background-image: url(../jpg/icon_2.png);
+  background-size: contain;
 }
 
 .point2 {
@@ -523,7 +563,8 @@ input[type='checkbox']:checked+.slider:before {
   border-color: #ffffff;
   border-width: 2px;
   border-radius: 16px;
-  background-color: rgba(91, 91, 91, 0.8);
+  background-image: url(../jpg/icon_3.png);
+  background-size: contain;
 }
 
 .point3 {
@@ -544,10 +585,33 @@ input[type='checkbox']:checked+.slider:before {
   border-color: #ffffff;
   border-width: 2px;
   border-radius: 16px;
-  background-color: rgba(91, 91, 91, 0.8);
+  background-image: url(../jpg/icon_4.png);
+  background-size: contain;
 }
 
 .point4 {
+  width: 11px;
+  height: 11px;
+  border-radius: 6px;
+}
+
+.flag5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 32px;
+  height: 32px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px;
+  border-radius: 16px;
+  background-image: url(../jpg/icon_5.png);
+  background-size: contain;
+}
+
+.point5 {
   width: 11px;
   height: 11px;
   border-radius: 6px;

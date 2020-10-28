@@ -15,23 +15,49 @@
 </head>
 <body>
     <header>
-
-
-        <div class="nav"  >
-            <button class="tablinks" onclick="opentab(event, 'raspisanie')"><h4 class="tabtxt" id="santa">Расписание</h4></button>
-            <button class="tablinks" onclick="opentab(event, 'budilnik')" id="defaultOpen"><h4 class="tabtxt">Будильник</h4></button>
-            <button class="tablinks" onclick="opentab(event, 'customization')"><h4 class="tabtxt">Настройки</h4></button>
+        <div class="nav">
+            <button class="tablinks" onclick="opentab(event, 'timetable')">
+                <h4 class="tabtxt">Расписание</h4>
+            </button>
+            <button class="tablinks" onclick="opentab(event, 'alarmclock')" id="defaultOpen">
+                <h4 class="tabtxt">Будильник</h4>
+            </button>
+            <button class="tablinks" onclick="opentab(event, 'customization')">
+                <h4 class="tabtxt">Настройки</h4>
+            </button>
         </div>
-
-
-
     </header>
 
-    <div id="raspisanie" class="tabcontent">
-        <h1 class="tabtxt">В разработке</h1>
+    <div id="timetable" class="tabcontent">
+        <div class="base">
+            <div class="table">
+                <div class="tableLeft"><h4 class="tabeltxt">ПН</h4></div>
+                <div class="tableRight"></div>
+            </div>
+            <div class="table">
+                <div class="tableLeft"><h4 class="tabeltxt">ВТ</h4></div>
+                <div class="tableRight"></div>
+            </div>
+            <div class="table">
+                <div class="tableLeft"><h4 class="tabeltxt">СР</h4></div>
+                <div class="tableRight"></div>
+            </div>
+            <div class="table">
+                <div class="tableLeft"><h4 class="tabeltxt">ЧТ</h4></div>
+                <div class="tableRight"></div>
+            </div>
+            <div class="table">
+                <div class="tableLeft"><h4 class="tabeltxt">ПТ</h4></div>
+                <div class="tableRight"></div>
+            </div>
+            <div class="table">
+                <div class="tableLeft"><h4 class="tabeltxt">СБ</h4></div>
+                <div class="tableRight"></div>
+            </div>
+        </div>
     </div>
 
-    <div id="budilnik" class="tabcontent">
+    <div id="alarmclock" class="tabcontent">
         <main>
             <div class="main_bud">
                 <ul id="spisokBud" class="spisok_bud">
@@ -42,73 +68,71 @@
     </div>
 
     <div id="customization" class="tabcontent">
-            <div class="base">
-                <div class="wrap">
-                    <button class="theme">
-                        <div class="buttTop">
-                    		<h4 class="custtxt">Смена темы</h4>
-                    	</div>
-                    	<div class="buttBottom">
-                        	<div class="flag0">
-                        		<div class="point0">
-                        		</div>
-                        	</div>
-                        	<div class="flag1">
-                        		<div class="point1">
-                        		</div>
-                        	</div>
-                        	<div class="flag2">
-                        		<div class="point2">
-                        		</div>
-                        	</div>
-                        	<div class="flag3">
-                        		<div class="point3">
-                        		</div>
-                        	</div>
-                        	<div class="flag4">
-                        		<div class="point4">
-                        		</div>
-                        	</div>
-                    	</div>
-                    </button>
-                </div>
-                <div class="wrap">
-                    <button class="audio">
-                        <div class="buttTop">
-                            <h4 class="custtxt">Смена мелодии</h4>
+        <div class="base">
+            <button class="theme">
+                <div class="buttTop">
+            		<h4 class="custtxt">Смена темы</h4>
+            	</div>
+            	<div class="buttBottom">
+                	<div class="flag0">
+                		<div class="point0">
+                		</div>
+                	</div>
+                	<div class="flag1">
+                		<div class="point1">
+                		</div>
+                	</div>
+                	<div class="flag2">
+                		<div class="point2">
+                		</div>
+                	</div>
+                	<div class="flag3">
+                		<div class="point3">
+                		</div>
+                	</div>
+                	<div class="flag4">
+                		<div class="point4">
+                		</div>
+                	</div>
+                    <div class="flag5">
+                        <div class="point5">
                         </div>
-                        <div class="buttBottom">
-                            <div class="easy"><h4 class="easytxt">easy</h4></div>
-                            <div class="medium"><h4 class="mediumtxt">medium</h4></div>
-                            <div class="hard"><h4 class="hardtxt">hard</h4></div>
-                        </div>
-                    </button>
+                    </div>
+            	</div>
+            </button>
+            <button class="audio">
+                <div class="buttTop">
+                    <h4 class="custtxt">Смена мелодии</h4>
                 </div>
-                <div class="wrap">
-                    <button class="dev">
-                        <h4 id="developers" class="custtxt">О разработчиках</h4>
-                        <div id="credits">
-                            <button id='creditsClose'>X</button>
-                            <div id="runningBlock">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aliquam nesciunt
-                                    labore sed dolor, fuga sunt esse maiores natus earum ut eaque fugit repellat architecto assumenda
-                                    similique excepturi saepe accusantium delectus est eligendi? Illo vitae dolor quam, repellat ab obcaecati molestias,
-                                    accusamus, suscipit harum nihil pariatur nulla facere. Inventore autem accusamus modi quia ullam
-                                    placeat earum tempora!
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aliquam nesciunt
-                                    labore sed dolor, fuga sunt esse maiores natus earum ut eaque fugit repellat architecto assumenda
-                                    similique excepturi saepe accusantium delectus est eligendi? Illo vitae dolor quam, repellat ab obcaecati molestias,
-                                    accusamus, suscipit harum nihil pariatur nulla facere. Inventore autem accusamus modi quia ullam
-                                    placeat earum tempora!
-                                </p>
-                            </div>
-                        </div>
-                    </button>
+                <div class="buttBottom">
+                    <div class="easy"><h4 class="easytxt">easy</h4></div>
+                    <div class="medium"><h4 class="mediumtxt">medium</h4></div>
+                    <div class="hard"><h4 class="hardtxt">hard</h4></div>
                 </div>
-            </div>
+            </button>
+            <button class="dev">
+                <h4 id="developers" class="custtxt">О разработчиках</h4>
+                <div id="credits">
+                    <button id='creditsClose'>X</button>
+                    <div id="runningBlock">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aliquam nesciunt
+                            labore sed dolor, fuga sunt esse maiores natus earum ut eaque fugit repellat architecto assumenda
+                            similique excepturi saepe accusantium delectus est eligendi? Illo vitae dolor quam, repellat ab obcaecati molestias,
+                            accusamus, suscipit harum nihil pariatur nulla facere. Inventore autem accusamus modi quia ullam
+                            placeat earum tempora!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aliquam nesciunt
+                            labore sed dolor, fuga sunt esse maiores natus earum ut eaque fugit repellat architecto assumenda
+                            similique excepturi saepe accusantium delectus est eligendi? Illo vitae dolor quam, repellat ab obcaecati molestias,
+                            accusamus, suscipit harum nihil pariatur nulla facere. Inventore autem accusamus modi quia ullam
+                            placeat earum tempora!
+                        </p>
+                    </div>
+                </div>
+            </button>
+        </div>
     </div>
 
     <script src="app.js"></script>

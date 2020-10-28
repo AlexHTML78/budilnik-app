@@ -50,7 +50,7 @@ var app = {
     timeHasLeft_p.appendChild(timeHasLeft_span);
     app.bud_num = app.bud_num + 1;
     li.innerHTML =
-      "<div class='bud_header'> <h2 id='time'>-:-</h2> <p id='info'>Вам осталось спать <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'><h2 id='za_skolko_text'><span>За</span><select class='hr_offset'></select><select class='min_offset'></select><span>до</span><select class='para' id='para'></select> <span>пары</span></h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
+      "<div class='bud_header'> <h2 id='time'>-:-</h2> <p id='info'>До срабатывания: <span id='time_left'></span></p>  </div> <label class='switch'> <input type='checkbox' name='onOff' class='onOff'> <span class='slider round'></span></label><div class='expanded_div'><div class='bud_footer'><h2 id='za_skolko_text'><span>За</span><select class='hr_offset'></select><select class='min_offset'></select><span>до</span><select class='para' id='para'></select> <span>пары</span></h2></div></div><div id='delete_dropdown' class='arrow-4'><span class='arrow-4-left'></span><span class='arrow-4-right'></span></div>";
     /*следущая строка добавляет сам новый будильник */
 
     $("#spisokBud").append(li);
@@ -239,19 +239,19 @@ function alarm() {
 
             if (selectedHour - hours < 0 && selectedMin - minutes < 0) {
               time_left.text(
-                selectedHour - hours + 24 + ":" + (selectedMin - minutes + 60)
+                selectedHour - hours + 24 + ":" + addZero(selectedMin - minutes + 60)
               );
             } else if (selectedMin - minutes < 0) {
               if (selectedHour - hours > 0) {
-                time_left.text("0" + ":" + (selectedMin - minutes + 60));
+                time_left.text("0" + ":" + addZero(selectedMin - minutes + 60));
               } else {
                 time_left.text(
-                  selectedHour - hours + ":" + (selectedMin - minutes + 60)
+                  selectedHour - hours + ":" + addZero(selectedMin - minutes + 60)
                 );
               }
             } else if (selectedHour - hours < 0) {
               time_left.text(
-                selectedHour - hours + 24 + ":" + (selectedMin - minutes)
+                selectedHour - hours + 24 + ":" + addZero(selectedMin - minutes)
               );
             } else if (this.checked == false) {
               time_left.text("   ");
@@ -283,7 +283,7 @@ function alarm() {
   }
   ifClicked();
 }
-var sound = new Audio("alarm.mp3");
+var sound = new Audio("easy.mp3");
 function addZero(time) {
   return time < 10 ? "0" + time : time;
 }
@@ -304,44 +304,105 @@ function changeTheme() {
   let images = [
     "url(jpg/app_background_1.png)",
     "url(jpg/app_background_2.png)",
+    "url(jpg/app_background_3.png)",
+    "url(jpg/app_background_4.png)",
+    "url(jpg/app_background_5.png)",
     "url(jpg/app_background.png)"
   ];
   let fonts = [
     'Reef',
     'Reef',
-    'Rtl'
+    'Reef',
+    'Reef',
+    'Reef',
+    'Reef'
   ];
+
+  let table = [
+    "rgba(83,136,173,0.5))",
+    "rgba(35,43,86,0.8)",
+    "rgba(35,43,86,0.8)",
+    "rgba(6,11,23,0.32)",
+    "rgba(53,53,53,0.9)",
+    "rgba(91,91,91,0.3)"
+  ];
+
   let theme = [
     "rgba(83,136,173,0.5))",
     "rgba(35,43,86,0.8)",
+    "rgba(35,43,86,0.8)",
+    "rgba(6,11,23,0.32)",
+    "rgba(53,53,53,0.9)",
     "rgba(91,91,91,0.3)"
   ];
   let audio = [
     "rgba(83,136,173,0.5))",
     "rgba(35,43,86,0.8)",
+    "rgba(35,43,86,0.8)",
+    "rgba(6,11,23,0.32)",
+    "rgba(53,53,53,0.9)",
     "rgba(91,91,91,0.3)"
   ];
   let dev = [
     "rgba(83,136,173,0.5))",
     "rgba(35,43,86,0.8)",
+    "rgba(35,43,86,0.8)",
+    "rgba(6,11,23,0.32)",
+    "rgba(53,53,53,0.9)",
     "rgba(91,91,91,0.3)"
   ];
   let main = [
     "rgba(83,136,173,0.5))",
     "rgba(35,43,86,0.8)",
+    "rgba(35,43,86,0.8)",
+    "rgba(6,11,23,0.32)",
+    "rgba(53,53,53,0.9)",
     "rgba(91,91,91,0.3)"
   ];
   let addTimer = [
     "rgba(83,136,173,0.5))",
     "rgba(35,43,86,0.8)",
+    "rgba(35,43,86,0.8)",
+    "rgba(6,11,23,0.32)",
+    "rgba(53,53,53,0.9)",
     "rgba(91,91,91,0.3)"
   ];
   let point1 = [
     "#ffffff",
     "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
     "rgba(0,0,0,0)"
   ];
   let point2 = [
+    "rgba(0,0,0,0)",
+    "#ffffff",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)"
+  ];
+  let point3 = [
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "#ffffff",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)"
+  ];
+  let point4 = [
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "#ffffff",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)"
+  ];
+  let point5 = [
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
     "rgba(0,0,0,0)",
     "#ffffff",
     "rgba(0,0,0,0)"
@@ -349,13 +410,20 @@ function changeTheme() {
   let point0 = [
     "rgba(0,0,0,0)",
     "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
+    "rgba(0,0,0,0)",
     "#ffffff"
   ];
   $(".point0").css("background-color", point0[app.count]);
   $(".point1").css("background-color", point1[app.count]);
   $(".point2").css("background-color", point2[app.count]);
+  $(".point3").css("background-color", point3[app.count]);
+  $(".point4").css("background-color", point4[app.count]);
+  $(".point5").css("background-color", point5[app.count]);
   $("body").css("background-image", images[app.count]);
   $("*").css("font-family", fonts[app.count]);
+  $(".table").css("background-color", table[app.count]);
   $(".theme").css("background-color", theme[app.count]);
   $(".audio").css("background-color", audio[app.count]);
   $(".dev").css("background-color", dev[app.count]);
@@ -369,40 +437,40 @@ function changeAlarmAudio() {
     app.audioCount = checkAudio;
   }
   let alarms = [
-    'hard.mp3',
-    'easy.mp3',
-    'medium.mp3'
+    'sound/hard.mp3',
+    'sound/easy.mp3',
+    'sound/medium.mp3'
   ];
   let testAudio = new Audio(alarms[app.audioCount]);
   let easy = [
-    "rgba(255,255,255,0.3)",
+    "rgba(255,255,255,0.5)",
     "#ffffff",
-    "rgba(255,255,255,0.3)"
+    "rgba(255,255,255,0.5)"
   ];
   let medium = [
-    "rgba(255,255,255,0.3)",
-    "rgba(255,255,255,0.3)",
+    "rgba(255,255,255,0.5)",
+    "rgba(255,255,255,0.5)",
     "#ffffff"
   ];
   let hard = [
     "#ffffff",
-    "rgba(255,255,255,0.3)",
-    "rgba(255,255,255,0.3)"
+    "rgba(255,255,255,0.5)",
+    "rgba(255,255,255,0.5)"
   ];
   let easytxt = [
-    "rgba(255,255,255,0.3)",
+    "rgba(255,255,255,0.5)",
     "#ffffff",
-    "rgba(255,255,255,0.3)"
+    "rgba(255,255,255,0.5)"
   ];
   let mediumtxt = [
-    "rgba(255,255,255,0.3)",
-    "rgba(255,255,255,0.3)",
+    "rgba(255,255,255,0.5)",
+    "rgba(255,255,255,0.5)",
     "#ffffff"
   ];
   let hardtxt = [
     "#ffffff",
-    "rgba(255,255,255,0.3)",
-    "rgba(255,255,255,0.3)"
+    "rgba(255,255,255,0.5)",
+    "rgba(255,255,255,0.5)"
   ];
   $(".easy").css("border-color", easy[app.audioCount]);
   $(".medium").css("border-color", medium[app.audioCount]);
@@ -428,7 +496,7 @@ $(changeAlarmAudio);
 // По клику на кнопку "Сменить тему/мелодию" устанавливаем порядок темы и мелодии, запускаем changeTheme() и changeAlarmAudio()
 $(".theme").click(function () {
   app.count++;
-  if (app.count > 2) {
+  if (app.count > 5) {
     app.count = 0;
   }
   localStorage.setItem("app.count", app.count);
@@ -485,4 +553,3 @@ $('#creditsClose').on("click touchstart", function () {
   $('#runningBlock').hide();
   $('#creditsClose').hide();
 });
-
